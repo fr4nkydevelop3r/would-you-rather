@@ -23,6 +23,7 @@ const handleUnanswered = (questions, authedID) => {
     
     
     const questionsObject = arrayToObject(questionsArray, "id");
+    console.log(questionsObject);
 
     return questionsObject;
 }

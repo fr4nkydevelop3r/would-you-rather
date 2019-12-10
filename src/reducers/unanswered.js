@@ -1,5 +1,5 @@
-import { RECEIVE_UNANSWERED } from '../actions/unanswered';
-
+import { RECEIVE_UNANSWERED, DELETE_UNANSWERED } from '../actions/unanswered';
+import { omit } from 'lodash';
 
 export default function unanswered (state = {}, action) {
     switch(action.type) {
@@ -8,6 +8,8 @@ export default function unanswered (state = {}, action) {
                 ...state,
                 ...action.unanswered
             }
+        case DELETE_UNANSWERED:
+                return omit(state, action.key);
         
         default:
             return state;
