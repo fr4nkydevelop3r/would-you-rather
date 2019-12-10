@@ -1,8 +1,10 @@
 import React from 'react';
 import QuestionsList from './QuestionsList';
 
+
 class Home extends React.Component {
 
+    
     state = {
         showUnanswered : true
     }
@@ -18,10 +20,13 @@ class Home extends React.Component {
             <div>
                 <button onClick={this.handleQuestionsShow} disabled={this.state.showUnanswered}>Unanswered Questions</button>
                 <button onClick={this.handleQuestionsShow} disabled={!this.state.showUnanswered} >Answered Questions</button>
-                 <QuestionsList authedUser = 'sarahedo' showUnanswered={this.state.showUnanswered} />    
+                 <QuestionsList showUnanswered={this.state.showUnanswered} />    
             </div>
         )
     }
 }
+
+
+
 
 export default Home;

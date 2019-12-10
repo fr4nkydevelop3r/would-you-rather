@@ -1,14 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { handleInitialData } from '../actions/shared';
+import Poll from './Poll';
 
 class QuestionsList extends React.Component {
 
-    componentDidMount(){
-
-        const {authedUser} = this.props;
-        this.props.handleInitialData(authedUser);
-    }
+    
 
     render(){
 
@@ -19,7 +15,7 @@ class QuestionsList extends React.Component {
        console.log(this.props.authedUser);*/
 
 
-       const { unanswered, answered, users, showUnanswered, authedUser } = this.props;
+       const { unanswered, answered, showUnanswered } = this.props;
        
        const unansweredIds = Object.keys(unanswered);
        const answeredIds = Object.keys(answered);
@@ -32,10 +28,10 @@ class QuestionsList extends React.Component {
 
                    {showUnanswered === true ?
                       unansweredIds.map((q) => (
-                          <div key={q   }>{q}</div>
+                          <Poll key={q} id={q}/>
                       )) :
                       answeredIds.map((q) => (
-                        <div key ={q}>{q}</div>
+                          <Poll key={q} id={q}/>
                     ))
                    }
                     
@@ -46,13 +42,7 @@ class QuestionsList extends React.Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-      handleInitialData : (id) => {
-        dispatch(handleInitialData(id))
-      }
-    }
-  }
+
 
 function mapStateToProps ({users, questions, unanswered, answered}, props) {
     return {
@@ -66,5 +56,5 @@ function mapStateToProps ({users, questions, unanswered, answered}, props) {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionsList);
+export default connect(mapStateToProps, null)(QuestionsList);
 
