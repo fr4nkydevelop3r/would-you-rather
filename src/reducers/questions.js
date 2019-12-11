@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, SAVE_ANSWER } from '../actions/questions';
+import { RECEIVE_QUESTIONS, SAVE_ANSWER, CREATE_QUESTION } from '../actions/questions';
 
 export default function questions (state = {}, action) {
     switch(action.type) {
@@ -19,14 +19,17 @@ export default function questions (state = {}, action) {
                                 action.payload.authedUser
                             ]
                         }
-                        
-                }
+                 }
         }
 
+        case CREATE_QUESTION: 
+            return {
+                ...state,
+                [action.question.id]: action.question
+            }
+
     
-            
-        
-        default:
+         default:
             return state;
     }
 }
