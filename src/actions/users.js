@@ -1,4 +1,6 @@
 export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const ADD_USER_ANSWER = 'ADD_USER_ANSWER'; 
+export const ADD_USER_QUESTION = 'ADD_USER_QUESTION';
 
 export function receiveUsers (users) {
     return {
@@ -6,3 +8,18 @@ export function receiveUsers (users) {
         users,
     }
 }
+
+export function addUserAnswer(payload) {
+    return {
+        type: ADD_USER_ANSWER,
+        payload
+    }
+}
+
+export function addUserQuestion(question){
+    return {
+        type: ADD_USER_QUESTION,
+        question
+    }
+}
+
