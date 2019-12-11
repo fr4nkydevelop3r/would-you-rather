@@ -6,6 +6,7 @@ import {
 } from  'react-router-dom';
 import Home from './Home';
 import PollItem from './PollItem';
+import CreatePoll from './CreatePoll';
 
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
@@ -34,6 +35,9 @@ class App extends React.Component {
 
         <Route exact path='/poll/:id'>
           <PollItem/>
+        </Route>
+        <Route exact path='/create'>
+          <CreatePoll />
         </Route>
       </Switch>
     </div>

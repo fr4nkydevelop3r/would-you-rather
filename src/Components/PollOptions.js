@@ -10,9 +10,9 @@ class PollOptions extends React.Component {
         selectedOption: "optionOne"
     };
     
-    handleSubmitAnswer = (e, pollID, authedUser) => {
+    handleSubmitAnswer = (e, poll, authedUser) => {
         e.preventDefault();
-        this.props.handleSaveAnswer(authedUser, pollID, this.state.selectedOption);
+        this.props.handleSaveAnswer(authedUser, poll, this.state.selectedOption);
         this.props.history.push(`/`);
 
     }
@@ -35,7 +35,7 @@ class PollOptions extends React.Component {
                 </div>
                 <div>
                     <h4>Would you rather?</h4>
-                    <form onSubmit={(e) => { this.handleSubmitAnswer(e, poll.id, authedUser) }}>
+                    <form onSubmit={(e) => { this.handleSubmitAnswer(e, poll, authedUser) }}>
                         <div>
                             <div>
                                 <input 

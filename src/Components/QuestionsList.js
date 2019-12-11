@@ -26,7 +26,7 @@ class QuestionsList extends React.Component {
 
             <div>
 
-                   {showUnanswered === true ?
+                   {showUnanswered === true && unansweredIds.length > 0 ?
                       unansweredIds.map((q) => (
                           <Poll key={q} id={q}/>
                       )) :
