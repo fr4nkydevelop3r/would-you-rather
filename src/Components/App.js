@@ -10,6 +10,7 @@ import CreatePoll from './CreatePoll';
 
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
+import  LeaderBoard  from './LeaderBoard'
 import Nav from './Nav';
 
 
@@ -28,21 +29,25 @@ class App extends React.Component {
 
   return (
     <div className="App">
-              <Nav />
+      <Nav />
 
       <Switch>
-      <Route 
-        exact path="/" 
-      >
-        <Home />
-      </Route>
+        
+        <Route exact path="/"> <Home />
+        </Route>
 
         <Route exact path='/poll/:id'>
           <PollItem/>
         </Route>
+        
         <Route exact path='/create'>
           <CreatePoll />
         </Route>
+
+        <Route exact path='/leaderboard'>
+          <LeaderBoard />
+        </Route>
+
       </Switch>
     </div>
   );

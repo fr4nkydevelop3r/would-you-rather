@@ -13,3 +13,15 @@
     border: none;
     color: black;
 }
+
+.firstPlace{
+    color:gold;
+}
+
+.secondPlace{
+    color: silver;
+}
+
+.thirdPlace{
+    color: brown;
+}
