@@ -3,3 +3,13 @@
     display: flex;
     justify-content: space-around;
 }
+
+.optionVoted{
+    border: 2px solid green;
+    color: green;
+}
+
+.optionNotVoted{
+    border: none;
+    color: black;
+}

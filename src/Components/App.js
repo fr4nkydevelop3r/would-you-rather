@@ -10,7 +10,7 @@ import CreatePoll from './CreatePoll';
 
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
-
+import Nav from './Nav';
 
 
 
@@ -24,8 +24,12 @@ class App extends React.Component {
 
   render(){
 
+
+
   return (
     <div className="App">
+              <Nav />
+
       <Switch>
       <Route 
         exact path="/" 

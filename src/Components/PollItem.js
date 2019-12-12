@@ -12,7 +12,7 @@ class PollItem extends React.Component {
         return (
             <div>
                 {pollType === 'answered' ? 
-                    <PollResults id={id} /> :
+                    <PollResults /> :
                         <PollOptions id={id}/>
                 }
             </div>

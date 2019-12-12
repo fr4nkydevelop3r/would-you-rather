@@ -27,7 +27,7 @@ class CreatePoll extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.handleCreateQuestion(this.props.authedUser, this.state.option1, this.state.option2);
-        this.props.history.push('/');
+       // this.props.history.push('/');
     }
 
     render(){
