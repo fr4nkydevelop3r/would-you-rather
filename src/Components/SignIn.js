@@ -2,18 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleGetUsers } from '../actions/users';
 import { setAuthedUser } from '../actions/authedUser';
+import { withRouter } from 'react-router-dom';
 
 import Select from 'react-select';
-import App from '../Components/App';
 
-class SigIn extends React.Component {
+class SignIn extends React.Component {
 
     state = {
-        selectedOption : null,
-        goHome : false
+        selectedOption : null,  
+        userID: ''
     }
 
-    componentDidMount(){
+    getUsers = () => {
         this.props.handleGetUsers();
     }
 
@@ -27,19 +27,20 @@ class SigIn extends React.Component {
         e.preventDefault();
         const { selectedOption } = this.state;
         this.props.setAuthedUser(selectedOption.id);
-        this.setState(({
-            goHome: true
-        }))
-
+        this.props.history.push('/');
     }
 
 
     render(){
 
 
-        const {users, authedUser} = this.props;
-        const usersArr = Object.values(users);
-        const options = usersArr.map((user) => (
+        const {users} = this.props;
+        let options = [];
+
+
+        if(Object.keys(users).length > 0){
+            const usersArr = Object.values(users);
+            options = usersArr.map((user) => (
             {
                 id: user.id,
                 value: user.name,
@@ -48,45 +49,51 @@ class SigIn extends React.Component {
             }
         ))
 
-        const { selectedOption, goHome } = this.state;
-
+        } else{
+            this.getUsers();
+        }
 
         
 
 
+        
+
+        const { selectedOption,  } = this.state;   
+        
+        
+
         return(
+
+
             <div>
+
                 <h4>Sign in</h4>
-
-                {
-                    authedUser && goHome ?
-                        <App />
-
-                        : <div>
-                           { Object.keys(users).length > 0 &&
-                        
-                        <form onSubmit={(e) => {
-                            this.handleSubmit(e)
-                        }}>
-                            <Select 
-                                value={selectedOption}
-                                onChange={this.handleChange}
-                                options={options} 
-                            /> 
-                            <button>SignIn</button>
-
-                        </form>
-                            } </div>
-                            
-                              
-                    
-
-                }
-            </div>
-
-
                 
+                <div>
+                   
+                {
                     
+                options.length > 0 &&
+                    <form onSubmit={(e) => {
+                       this.handleSubmit(e)
+                   }}>
+                       <Select 
+                           value={selectedOption}
+                           onChange={this.handleChange}
+                           options={options} 
+                       /> 
+                       <button>SignIn</button>
+  
+                   </form> 
+                
+
+                 }
+
+  
+                </div>
+               
+                
+            </div>             
                 
 
         )
@@ -116,4 +123,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default  connect(mapStateToProps, mapDispatchToProps)(SigIn);
+export default  withRouter(connect(mapStateToProps, mapDispatchToProps)(SignIn));

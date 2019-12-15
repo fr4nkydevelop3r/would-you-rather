@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleCreateQuestion } from '../actions/questions'
 import { withRouter }  from 'react-router-dom';
+import SignIn  from './SignIn';
 
 class CreatePoll extends React.Component {
 
@@ -31,9 +32,17 @@ class CreatePoll extends React.Component {
     }
 
     render(){
+
+        const {authedUser} = this.props;
+
+        
+
+
         return(
             <div>
-                <h3>Would your rather?</h3>
+                {authedUser ? 
+                <div>
+                                    <h3>Would your rather?</h3>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text" name='option1' onChange={this.handleOnChange} value= {this.state.option1}/>
@@ -51,6 +60,9 @@ class CreatePoll extends React.Component {
                      </div>
 
                 </form>
+                </div>
+ : <SignIn />}
+                
             </div>
         )
     }

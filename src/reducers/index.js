@@ -19,7 +19,6 @@ const appReducer = combineReducers({
 const rootReducer = (state, action) => {
     console.log(action);
     if (action.type === 'USER_LOGOUT') {
-        alert('Si llego al root reducer');
         state = undefined
     }
     

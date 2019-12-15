@@ -1,17 +1,16 @@
 import React from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { userLogout } from '../actions/index';
 
-function Nav ({unsetAuthedUser, history}) {
+function Nav ({dispatch, history, user}) {
 
-  const handleLogOut = (e) => {
-    e.preventDefault();
-    //history.push('signin');
+  const handleLogout = () => {
+    dispatch({type:'USER_LOGOUT'});
+    //history.push('/signin');
   }
-
-
+  
   return (
+
 
     <nav className='nav'>
       <ul>
@@ -30,11 +29,13 @@ function Nav ({unsetAuthedUser, history}) {
             LeaderBoard
           </NavLink>
         </li>
-        <li>
-          <NavLink to='/signin' activeClassName='active' onClick={handleLogOut} >
+        {user && 
+        <li> <div>Hello  {user.name}</div>
+          <NavLink to='/signin' activeClassName='active' onClick={handleLogout} >
             Logout
           </NavLink>
-        </li>
+        </li>}
+        
       </ul>
     </nav>
   )
@@ -43,9 +44,18 @@ function Nav ({unsetAuthedUser, history}) {
 
 
 
+function mapStateToProps({users, authedUser}){
+
+  const user = users[authedUser];
+
+  return {
+    authedUser,
+    user
+  }
+}
 
 
 
 
 
-export default withRouter(connect(null, null)(Nav));
+export default withRouter(connect(mapStateToProps, null)(Nav));

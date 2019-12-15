@@ -3,7 +3,6 @@ import { receiveUsers } from './users';
 import { receiveQuestions} from './questions'
 import { receiveUnanswered } from './unanswered';
 import { receiveAnswered, } from './answered'
-import { setAuthedUser } from './authedUser';
 
 
 const handleUnanswered = (questions, authedID) => {
@@ -61,7 +60,7 @@ export function handleInitialData(authedID) {
                 const unanswered = handleUnanswered(questions, authedID);
                 const answered = handleAnswered(questions, authedID);
                 
-                dispatch(setAuthedUser(authedID));
+                //dispatch(setAuthedUser(authedID));
                 dispatch(receiveUsers(users));
                 dispatch(receiveQuestions(questions));
                 dispatch(receiveUnanswered(unanswered))

@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import LeaderBoardItem from './LeaderBoardItem';
+import SignIn from './SignIn';
 
 class LeaderBoard extends React.Component {
     render(){
-        const {users} = this.props;
+        const {users, authedUser} = this.props;
         let keysUsers = [];
         let usersArray = [];
 
@@ -35,6 +36,7 @@ class LeaderBoard extends React.Component {
             <div>
 
             {
+                authedUser ? 
                 usersArray.map((user, index) => (
                     <LeaderBoardItem    
                         key={index}
@@ -44,7 +46,8 @@ class LeaderBoard extends React.Component {
                         answers={user.answers}
                         position={index+1}
                     />
-                ))
+                )) : <SignIn />
+
             }
 
             </div>
@@ -53,9 +56,10 @@ class LeaderBoard extends React.Component {
 }
 
 
-function mapStateToProps({users}){
+function mapStateToProps({users, authedUser}){
     return{
-        users
+        users,
+        authedUser
     }
 }
 
