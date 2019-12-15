@@ -29,6 +29,7 @@ class LeaderBoard extends React.Component {
 
         }  
         
+        
 
         return(
             <div>

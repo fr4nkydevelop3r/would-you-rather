@@ -6,6 +6,7 @@ export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
 export const CREATE_QUESTION = 'CREATE_QUESTION'
 
+
 export function receiveQuestions (questions) {
     return {
         type : RECEIVE_QUESTIONS,
@@ -27,6 +28,8 @@ export function createQuestion(question) {
         question
     }
 }
+
+
 
 function handleAddAnswer(payload){
     const {authedUser, poll, answer} = payload;

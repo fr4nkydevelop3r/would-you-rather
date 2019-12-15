@@ -10,45 +10,64 @@ import CreatePoll from './CreatePoll';
 
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
-import  LeaderBoard  from './LeaderBoard'
+import  LeaderBoard    from './LeaderBoard'
 import Nav from './Nav';
-
+import SigIn from './SignIn';
 
 
 
 class App extends React.Component {
 
   componentDidMount(){
-    const authedUser = 'sarahedo';
+    const {authedUser} = this.props;
     this.props.handleInitialData(authedUser);
   }
 
   render(){
 
+    const { authedUser } = this.props;
+
 
 
   return (
+ 
+
     <div className="App">
-      <Nav />
 
-      <Switch>
-        
-        <Route exact path="/"> <Home />
-        </Route>
+    {
+      authedUser && 
 
-        <Route exact path='/poll/:id'>
-          <PollItem/>
-        </Route>
-        
-        <Route exact path='/create'>
-          <CreatePoll />
-        </Route>
+        <div>
+          <Nav />
 
-        <Route exact path='/leaderboard'>
-          <LeaderBoard />
-        </Route>
+          <Switch>
+  
+            <Route exact path="/"> <Home />
+            </Route>
 
-      </Switch>
+            <Route exact path='/poll/:id'>
+              <PollItem/>
+            </Route>
+            
+            <Route exact path='/create'>
+              <CreatePoll />
+            </Route>
+
+            <Route exact path='/leaderboard'>
+              <LeaderBoard />
+            </Route>
+
+            <Route exact path='/signin'>
+              <SigIn />
+            </Route>
+
+          </Switch>
+
+        </div>
+
+      
+    }
+
     </div>
   );
   }
@@ -63,4 +82,10 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null,mapDispatchToProps)(App);
+const mapStateToProps = ({authedUser}) => {
+  return {
+    authedUser
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);

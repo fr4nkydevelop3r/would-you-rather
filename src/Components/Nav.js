@@ -1,8 +1,18 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { userLogout } from '../actions/index';
 
-export default function Nav () {
+function Nav ({unsetAuthedUser, history}) {
+
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    //history.push('signin');
+  }
+
+
   return (
+
     <nav className='nav'>
       <ul>
         <li>
@@ -20,7 +30,22 @@ export default function Nav () {
             LeaderBoard
           </NavLink>
         </li>
+        <li>
+          <NavLink to='/signin' activeClassName='active' onClick={handleLogOut} >
+            Logout
+          </NavLink>
+        </li>
       </ul>
     </nav>
   )
 } 
+
+
+
+
+
+
+
+
+
+export default withRouter(connect(null, null)(Nav));

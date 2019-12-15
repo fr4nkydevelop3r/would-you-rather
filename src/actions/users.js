@@ -1,3 +1,4 @@
+import {getUsers} from '../utils/api';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const ADD_USER_ANSWER = 'ADD_USER_ANSWER'; 
 export const ADD_USER_QUESTION = 'ADD_USER_QUESTION';
@@ -20,6 +21,17 @@ export function addUserQuestion(question){
     return {
         type: ADD_USER_QUESTION,
         question
+    }
+}
+
+
+
+export function handleGetUsers(){
+    return (dispatch) => {
+        return getUsers()
+            .then(({users}) => {
+                dispatch(receiveUsers(users))
+            })
     }
 }
 

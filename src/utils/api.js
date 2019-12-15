@@ -24,3 +24,10 @@ export function saveQuestionAnswer (info) {
 export function saveQuestion(question){
     return _saveQuestion(question)
 }
+
+export function getUsers(){
+    return _getUsers()
+        .then((users) => ({
+            users
+        }))
+}
