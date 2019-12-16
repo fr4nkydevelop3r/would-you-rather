@@ -9,14 +9,17 @@ class PollItem extends React.Component {
     render(){
 
         const {pollType,id, authedUser} = this.props;
-
+        console.log(authedUser);
+        console.log(id);
+        console.log(pollType);
         return (
-            <div>{
+            <div>
+            { authedUser ?
                 pollType === 'answered' ? 
                 <PollResults /> :
                     <PollOptions id={id}/>
                     
-                }
+            : <SignIn /> }
                 
             </div>
         )
@@ -37,7 +40,8 @@ function mapStatetoProps ({users, questions, answered, unanswered, authedUser}, 
 
     return{
         pollType,
-        id
+        id,
+        authedUser
     }
 }
 

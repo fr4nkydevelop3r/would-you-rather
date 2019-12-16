@@ -1,10 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
+import { handleInitialData } from '../actions/shared';
+import  NotFound  from './NotFound';
 import ResultItem from './ResultItem';
 
 class PollResults extends React.Component {
 
+
+    componentDidMount(){
+        const {authedUser,poll} = this.props;
+        if(!poll){
+            this.props.handleInitialData(authedUser);   
+
+        }
+
+    }
 
     render() {
 
@@ -20,7 +31,7 @@ class PollResults extends React.Component {
         let percentageOptionOne = 0;
         let percentageOptionTwo = 0;
 
-
+        console.log(poll);
 
         if(poll){
             textOptionOne = poll.optionOne.text;
@@ -48,7 +59,7 @@ class PollResults extends React.Component {
         return(
             <div>
 
-            {poll && 
+            {poll ?
                 <div>
                     <h4>Asked by {poll.author}</h4>
                     <ResultItem 
@@ -65,18 +76,26 @@ class PollResults extends React.Component {
                         hasVoted={hasVotedOptionTwo}
                         percentage={percentageOptionTwo}
                     />
-                </div>
-                
-            }
+                </div> : 
+                    <NotFound />
+            }   
 
             </div>
         )
     }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+      handleInitialData : (id) => {
+        dispatch(handleInitialData(id))
+      }
+    }
+  }
+
+
 function mapStateToProps({answered, authedUser}, props){
     const { id } = props.match.params;
-
     const poll = answered[id];
     return{
         poll,
@@ -84,4 +103,4 @@ function mapStateToProps({answered, authedUser}, props){
     }
 }
 
-export default withRouter(connect(mapStateToProps, null)(PollResults));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PollResults));

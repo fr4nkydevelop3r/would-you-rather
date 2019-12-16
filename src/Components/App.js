@@ -48,7 +48,7 @@ class App extends React.Component {
               <PollItem/>
             </Route>
             
-            <Route exact path='/create'>
+            <Route exact path='/add'>
               <CreatePoll />
             </Route>
 

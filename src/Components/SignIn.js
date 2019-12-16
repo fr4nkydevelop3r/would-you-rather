@@ -25,9 +25,15 @@ class SignIn extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const { location } = this.props;
         const { selectedOption } = this.state;
         this.props.setAuthedUser(selectedOption.id);
-        this.props.history.push('/');
+        console.log(location.pathname);
+        if(location.pathname === '/signin'){
+            this.props.history.push('/');
+        } else {
+            this.props.history.push(location.pathname);
+        }
     }
 
 

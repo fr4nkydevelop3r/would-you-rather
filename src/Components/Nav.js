@@ -6,6 +6,7 @@ function Nav ({dispatch, history, user}) {
 
   const handleLogout = () => {
     dispatch({type:'USER_LOGOUT'});
+    //console.log(history.push);
     //history.push('/signin');
   }
   
@@ -15,12 +16,12 @@ function Nav ({dispatch, history, user}) {
     <nav className='nav'>
       <ul>
         <li>
-          <NavLink to='/' exact activeClassName='active'>
+          <NavLink  to='/' exact activeClassName='active'>
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to='/create' activeClassName='active'>
+          <NavLink to='/add' activeClassName='active'>
             New Question
           </NavLink>
         </li>

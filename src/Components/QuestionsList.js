@@ -17,21 +17,26 @@ class QuestionsList extends React.Component {
 
        const { unanswered, answered, showUnanswered } = this.props;
        
-       const unansweredIds = Object.keys(unanswered);
-       const answeredIds = Object.keys(answered);
+
+       let answeredArray = Object.values(answered);
+       answeredArray = answeredArray.sort((a,b) => b.timestamp - a.timestamp);
+
       
+       let unansweredArray = Object.values(unanswered);
+       unansweredArray = unansweredArray.sort((a,b) => b.timestamp - a.timestamp);
+
 
         return(
             
 
             <div>
 
-                   {showUnanswered === true && unansweredIds.length > 0 ?
-                      unansweredIds.map((q) => (
-                          <Poll key={q} id={q}/>
+                   {showUnanswered === true && unansweredArray.length > 0 ?
+                      unansweredArray.map((q) => (
+                          <Poll key={q.id} id={q.id}/>
                       )) :
-                      answeredIds.map((q) => (
-                          <Poll key={q} id={q}/>
+                      answeredArray.map((q) => (
+                          <Poll key={q.id} id={q.id}/>
                     ))
                    }
                     
@@ -45,6 +50,11 @@ class QuestionsList extends React.Component {
 
 
 function mapStateToProps ({users, questions, unanswered, answered}, props) {
+
+
+//  replies: !tweets[id] ? [] : tweets[id].replies.sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
+
+
     return {
         users,
         questions,
