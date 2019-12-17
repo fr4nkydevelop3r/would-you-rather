@@ -3,38 +3,54 @@ import { connect } from 'react-redux';
 import { handleGetUsers } from '../actions/users';
 import { setAuthedUser } from '../actions/authedUser';
 import { withRouter } from 'react-router-dom';
+import '../App.css';
+
 
 import Select from 'react-select';
 
-class SignIn extends React.Component {
 
+class SignIn extends React.Component {
     state = {
         selectedOption : null,  
-        userID: ''
+        userID: '',
+        textWarning : ''
     }
 
     getUsers = () => {
         this.props.handleGetUsers();
     }
 
-    handleChange = selectedOption => {
+    handleChangeSelect = selectedOption => {
         this.setState({
-            selectedOption
+            selectedOption,
+            textWarning: ''
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = () => {
         const { location } = this.props;
         const { selectedOption } = this.state;
         this.props.setAuthedUser(selectedOption.id);
-        console.log(location.pathname);
         if(location.pathname === '/signin'){
             this.props.history.push('/');
         } else {
             this.props.history.push(location.pathname);
         }
     }
+
+    handleSignIn = (e) => {
+        e.preventDefault();
+        const {selectedOption} = this.state;
+        if(selectedOption){
+            this.handleSubmit();
+        } else{
+            this.setState(({
+                textWarning: 'Please select user'
+            }));
+        }
+    }
+
+
 
 
     render(){
@@ -71,24 +87,41 @@ class SignIn extends React.Component {
         return(
 
 
-            <div>
+            <div className='signin-container'>
 
-                <h4>Sign in</h4>
+                <h4 className='welcome-message'>Would you Rather app!</h4>
+              <span>Have fun!</span>  <span role='img' aria-label='lol'> 😎</span>
                 
-                <div>
+                <div className='select-users-container'>
                    
                 {
                     
                 options.length > 0 &&
-                    <form onSubmit={(e) => {
-                       this.handleSubmit(e)
-                   }}>
+                    <form>
                        <Select 
                            value={selectedOption}
-                           onChange={this.handleChange}
+                           onChange={this.handleChangeSelect}
                            options={options} 
+                           placeholder='Select User'
+                           theme={theme => ({
+                            ...theme,
+                            borderRadius: 0,
+                            colors: {
+                              ...theme.colors,
+                              primary25: 'primary75',
+                              primary: 'hotpink',
+                            },
+                          })}   
+
+
                        /> 
-                       <button>SignIn</button>
+                       <div className='text-warning'>
+                          {this.state.textWarning}
+                       </div>
+                       <button 
+                        className='signin-btn'
+                        onClick={this.handleSignIn}
+                       >Sign In</button>
   
                    </form> 
                 
