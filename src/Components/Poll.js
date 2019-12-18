@@ -16,21 +16,22 @@ class Poll extends React.Component {
         const {poll,user} = this.props;
 
         return(
-            <div className='pollContainer'>
-                <div>
-                    <h3>{user.name} asks:</h3>
-                    <img alt={user.name} src={user.avatarURL} width='100px' height='100px'/>
+            <div className='poll-container'>
+                <div className='author-poll'>
+                    <span className='author-poll-name'>{user.name} asks:</span>
+                    <img className='author-poll-image' alt={user.name} src={user.avatarURL} width='70px' height='70px'/>
                 </div>
-                <div>
-                    <h4>Would you rather</h4>
-                    <p>...{poll.optionOne.text}</p>
+                <div className='poll'>
+                    <h4 className='poll-title'>Would you rather</h4>
+                    <p className='poll-option'>...{poll.optionOne.text}</p>
                     <Link to={`/poll/${poll.id}`}
 >
                     <button
-                    onClick={(e) => {
-                        this.toPoll(e,poll.id)
-                    }}
-                    to={`/poll/${poll.id}`}
+                        className='view-poll-btn'
+                        onClick={(e) => {
+                            this.toPoll(e,poll.id)
+                        }}
+                        to={`/poll/${poll.id}`}
 
                     >View poll</button>
                     </Link>

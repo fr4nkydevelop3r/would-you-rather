@@ -35,8 +35,8 @@ class Nav extends React.Component  {
     const {user} = this.props;
   
   return (
-    <div>
-      <div>{user && <div>Hello {user.name}</div>}</div>
+    <div className='nav-container'>
+      <div className='welcome-user'>{user && <div>Hello {user.name}</div>}</div>
       <div className='nav'>
           <Menu right isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)} >
             <NavLink  to='/' exact activeClassName='active' className="menu-item" onClick={this.handleCloseMenu}>

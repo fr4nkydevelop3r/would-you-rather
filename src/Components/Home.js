@@ -9,7 +9,7 @@ class Home extends React.Component {
 
     
     state = {
-        showUnanswered : true    
+        showQuestions : 'unanswered'
     }
 
     componentDidMount(){
@@ -25,9 +25,10 @@ class Home extends React.Component {
         }
     }
 
-    handleQuestionsShow = () => {
+    handleQuestionsShow = (e) => {
+        e.persist();
         this.setState(() => ({
-            showUnanswered : !this.state.showUnanswered
+            showQuestions : e.target.name
         }));
     }
 
@@ -36,15 +37,25 @@ class Home extends React.Component {
     render(){
 
         const {authedUser} = this.props;
-        
+        const {showQuestions} = this.state;
 
         return(
 
             authedUser ?
-                <div>
-                <button onClick={this.handleQuestionsShow} disabled={this.state.showUnanswered}>Unanswered Questions</button>
-                <button onClick={this.handleQuestionsShow} disabled={!this.state.showUnanswered} >Answered Questions</button>
-                 <QuestionsList showUnanswered={this.state.showUnanswered} />    
+                <div className='home-container'>
+                    <div className='questions-btns'>
+                        <button 
+                            onClick={this.handleQuestionsShow} 
+                            name='unanswered'
+                            className={`show-questions-btn ${showQuestions==='unanswered' ? 'selected-category': ''}`}>Unanswered Questions
+                        </button>
+                        <button 
+                            onClick={this.handleQuestionsShow}  
+                            name='answered'
+                            className={`show-questions-btn ${showQuestions==='answered' ? 'selected-category': ''}`}>Answered Questions
+                        </button>
+                    </div>
+                    <QuestionsList showQuestions={showQuestions} />    
             </div> :
             <div> <Signin /> </div> 
             

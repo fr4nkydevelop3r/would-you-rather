@@ -15,7 +15,7 @@ class QuestionsList extends React.Component {
        console.log(this.props.authedUser);*/
 
 
-       const { unanswered, answered, showUnanswered } = this.props;
+       const { unanswered, answered, showQuestions } = this.props;
        
 
        let answeredArray = Object.values(answered);
@@ -29,9 +29,9 @@ class QuestionsList extends React.Component {
         return(
             
 
-            <div>
+            <div className='questions-list-container'>
 
-                   {showUnanswered === true && unansweredArray.length > 0 ?
+                   {showQuestions === 'unanswered' && unansweredArray.length > 0 ?
                       unansweredArray.map((q) => (
                           <Poll key={q.id} id={q.id}/>
                       )) :
