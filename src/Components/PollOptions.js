@@ -26,18 +26,40 @@ class PollOptions extends React.Component {
     render() {
         const { user, poll, authedUser } = this.props;
 
+        /* 
+        
+        <div className='author-poll'>
+                    <span className='author-poll-name'>{user.name} asks:</span>
+                    <img className='author-poll-image' alt={user.name} src={user.avatarURL} width='70px' height='70px'/>
+                </div>
+                <div className='poll'>
+                    <h4 className='poll-title'>Would you rather</h4>
+                    <p className='poll-option'>...{poll.optionOne.text}</p>
+                    <Link to={`/poll/${poll.id}`}
+>
+                    <button
+                        className='view-poll-btn'
+                        onClick={(e) => {
+                            this.toPoll(e,poll.id)
+                        }}
+                        to={`/poll/${poll.id}`}
+
+                    >View poll</button>
+                    </Link>
+                    
+                </div>*/
 
         return(
             <div className='pollContainer'>
-                <div>
-                    <h3>{user.name} asks:</h3>
-                    <img alt={user.name} src={user.avatarURL} width='100px' height='100px'/>
+                <div className='author-poll'>
+                    <span className='author-poll-name'>{user.name} asks:</span>
+                    <img className='author-poll-image' alt={user.name} src={user.avatarURL} width='70px' height='70px'/>
                 </div>
-                <div>
-                    <h4>Would you rather?</h4>
+                <div className='poll'>
+                    <h4 className='poll-title'>Would you rather</h4>
                     <form onSubmit={(e) => { this.handleSubmitAnswer(e, poll, authedUser) }}>
-                        <div>
-                            <div>
+                        <div className='pollOptions'>
+                            <div className='pollOption'>
                                 <input 
                                     type="radio" 
                                     id="optionOne" 
@@ -50,7 +72,7 @@ class PollOptions extends React.Component {
                                 <label htmlFor="optionOne">{poll.optionOne.text}</label>
                             </div>
                             
-                            <div>
+                            <div className='pollOption'>
                                 <input 
                                     type="radio" 
                                     id="optionTwo" 
@@ -63,9 +85,9 @@ class PollOptions extends React.Component {
                                 />
                                 <label htmlFor="optionTwo">{poll.optionTwo.text}</label>
                             </div>
-
-                            <button type="submit">Submit</button>
-
+                        </div>
+                        <div className='vote-poll'>
+                        <button className='votePoll-btn' type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

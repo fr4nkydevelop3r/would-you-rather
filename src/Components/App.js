@@ -10,7 +10,9 @@ import CreatePoll from './CreatePoll';
 import  LeaderBoard    from './LeaderBoard'
 import Nav from './Nav';
 import SigIn from './SignIn';
+import Footer from './Footer';
 import NotFound from './NotFound';
+
 
 
 class App extends React.Component {
@@ -29,7 +31,7 @@ class App extends React.Component {
 
     
 
-        <div>
+        <div className='App-container'>
           <Nav />
 
           <Switch>
@@ -61,6 +63,9 @@ class App extends React.Component {
            
 
           </Switch>
+
+          <Footer />
+
 
         </div>
 

@@ -4,6 +4,7 @@ body{
     margin: 0;
 }
 
+ 
 .pollContainer{
     display: flex;
     justify-content: space-around;
@@ -36,18 +37,27 @@ body{
 .nav-container{
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .welcome-user{
     color: pink;
     padding-top: 50px;
-    padding-left: 16px;
+    padding-left: 136px;
 }
 
 
 
 
 /*Menu Compoent Styles*/
+
+.nav-container{
+    position: fixed;
+    top: 0;
+    background: #373a47;
+    z-index: 1000;
+}
+
 
 .bm-burger-button {
     position: fixed;
@@ -132,7 +142,7 @@ body{
 
   .signin-container{
     color: #fff;
-    margin-top: 64px;
+    margin-top: 128px;
     text-align: center
   }
 
@@ -172,7 +182,8 @@ body{
 /*Home component styles*/
 
 .home-container{
-    margin-top: 42px;
+    margin-top: 110px;
+    margin-bottom: 64px;
 }
 
 .questions-btns{
@@ -240,7 +251,7 @@ body{
 
 .poll-title{
     color: #fff;
-    margin:0;   
+    margin:0 0 8px 0;   
 }
 
 .poll-option{
@@ -257,4 +268,66 @@ body{
     color:pink;    
 }
 
+
+/*Styles footer*/
+.footer{
+    background: #373a47;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.made-by{
+    color: #fff;
+}
+
+.fr4nky{
+    color: pink;
+    text-decoration: none;
+}
+
+.loader{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.no-unanswered, .no-answered{
+    margin-top: 16px;
+    color: pink;
+}
+
+/*Poll Options styles*/
+
+.pollContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 128px;
+    height: 150px; 
+}
+
+.pollOptions{
+    color: #fff;
+    font-size: 15px;
+}
+
+.pollOption{
+        margin-bottom: 8px;
+}
+
+.vote-poll{
+    text-align: center;
+    margin-top: 16px;
+}
+
+.votePoll-btn{
+    padding: 8px;
+    border:2px solid pink;
+    color: #fff;
+    background: none;
+}
 
