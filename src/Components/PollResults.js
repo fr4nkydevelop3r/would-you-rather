@@ -18,7 +18,6 @@ class PollResults extends React.Component {
     }
 
     render() {
-
         const {poll, authedUser} = this.props;
 
         let textOptionOne = '';
@@ -31,7 +30,6 @@ class PollResults extends React.Component {
         let percentageOptionOne = 0;
         let percentageOptionTwo = 0;
 
-        console.log(poll);
 
         if(poll){
             textOptionOne = poll.optionOne.text;
@@ -54,28 +52,32 @@ class PollResults extends React.Component {
             console.log(hasVotedOptionTwo);*/
         }
 
+        console.log(poll);
 
 
         return(
-            <div>
+            <div className='poll-result-container'>
 
             {poll ?
                 <div className='poll-result'>
                     <h4 className='asked-by'>Asked by {poll.author}</h4>
-                    <ResultItem 
-                        text={textOptionOne}
-                        totalVotes={totalVotes}
-                        votes={votesOptionOne}
-                        hasVoted={hasVotedOptionOne}
-                        percentage ={percentageOptionOne}
-                    />
-                    <ResultItem  
-                        text={textOptionTwo}
-                        totalVotes={totalVotes}
-                        votes={votesOptionTwo}
-                        hasVoted={hasVotedOptionTwo}
-                        percentage={percentageOptionTwo}
-                    />
+                    <div className='result-item'>
+                        <ResultItem 
+                            text={textOptionOne}
+                            totalVotes={totalVotes}
+                            votes={votesOptionOne}
+                            hasVoted={hasVotedOptionOne}
+                            percentage ={percentageOptionOne}
+                        />
+                        <ResultItem  
+                            text={textOptionTwo}
+                            totalVotes={totalVotes}
+                            votes={votesOptionTwo}
+                            hasVoted={hasVotedOptionTwo}
+                            percentage={percentageOptionTwo}
+                        />
+                    </div>
+
                 </div> : 
                     <NotFound />
             }   

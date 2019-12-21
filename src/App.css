@@ -12,17 +12,7 @@ body{
 
 
 
-.firstPlace{
-    color:gold;
-}
 
-.secondPlace{
-    color: silver;
-}
-
-.thirdPlace{
-    color: brown;
-}
 
 /*Nav Component Styles*/
 
@@ -312,6 +302,16 @@ body{
     height: 150px; 
 }
 
+.poll-options-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option1, .option2{
+    padding-left: 8px;
+}
+
 .pollOptions{
     color: #fff;
     font-size: 15px;
@@ -426,3 +426,188 @@ body{
 .input-poll:focus{
     outline: none;
 }
+
+.validate-option1, .validate-option2{
+    color: pink;
+}
+
+/*LeaderBoard styles component*/
+
+.leaderboard-container{
+    margin-top: 128px;
+    padding: 16px;      
+}
+
+.leaderboard-item{
+    display: flex;
+    padding: 8px;
+    height: 130px;
+}
+
+.leaderboard-user-name{
+    color: #fff;
+    text-align: center;
+}
+
+.leaderboard-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    width: 110px;
+}
+
+.leaderboard-user-questions{
+    padding: 8px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+.leaderboard-user-answered, .leaderboard-user-created{
+    text-align: center;
+}
+
+.firstPlace, .secondPlace, .thirdPlace{
+    padding: 8px 8px 8px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;   
+    text-align: center;
+    color: pink;    
+}
+
+.firstPlace .score-number{
+    color:gold;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondPlace .score-number{
+    color: silver;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thirdPlace .score-number{
+    color: brown;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*
+Styles Page not found
+*/
+
+.not-found{
+    margin-top: 186px;
+    text-align: center;
+    color: pink;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .welcome-user{
+        padding-left: 450px;
+    }
+
+    .show-questions-btn{
+        font-size: 14px;
+    }
+
+    .questions-list-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .poll-container{
+        width: 50%;
+        margin-bottom: 16px;
+    }
+
+    .poll-item{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pollContainer{
+        width: 70%;
+    }
+
+    .leaderboard-container{
+        display: flex;  
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leaderboard-item{
+        width: 500px;
+        justify-content: space-around;
+    }
+
+    .createPoll-container{
+        margin-top: 186px;
+    }
+
+    .votePoll-btn{
+        width: 70px;
+        font-size: 14px;
+    }
+
+  }
+
+  @media only screen and (min-width: 1200px) {
+
+    .welcome-user{
+        padding-left: 1100px;
+    }
+
+    .pollContainer{
+        width: 30%;
+        margin-top: 200px;
+    }
+
+    .asked-by{
+        text-align: center;
+    }
+
+    .poll-result-container{
+        width: 60%;
+    }
+
+    .result-item{
+        display: flex;  
+    }
+
+    .btn-create{
+        font-size: 14px;
+        width: 100px;
+    }
+
+    .btn-create:focus{
+        outline: none;
+    }
+  }

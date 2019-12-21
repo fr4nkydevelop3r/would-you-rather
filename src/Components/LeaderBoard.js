@@ -14,43 +14,43 @@ class LeaderBoard extends React.Component {
              usersArray = keysUsers.map((user) => (
                  {
                      name: users[user].name,
+                     avatar: users[user].avatarURL,
                      questions : users[user].questions.length,
                      answers : Object.keys(users[user].answers).length,
                      score:  users[user].questions.length +  Object.keys(users[user].answers).length
                  }
              ))
 
-             console.log(usersArray);
 
              usersArray.sort(function (a, b) {
                  return b.score - a.score
              });
 
 
-
         }  
-        
-        
 
+        
         return(
-            <div className='leaderboard-container'>
-
+            <>
             {
                 authedUser ? 
-                usersArray.map((user, index) => (
+                <div className='leaderboard-container'>
+
+                {usersArray.map((user, index) => (
+                    
                     <LeaderBoardItem    
                         key={index}
                         score={user.score}
-                        userName={user.name}
+                        username={user.name}
                         questions={user.questions}
                         answers={user.answers}
                         position={index+1}
+                        avatar={user.avatar }
                     />
-                )) : <SignIn />
+                ))} </div> : <SignIn />
 
             }
-
-            </div>
+         </>
         )
     } 
 }

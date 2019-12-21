@@ -15,11 +15,42 @@ class LeaderBoardItem extends React.Component {
         }
 
         return(
-            <div>
-                <div>Name: {this.props.userName}</div>
-                <div>Answered Questions: {this.props.answers}</div>
-                <div>Created Questions: {this.props.questions}</div>
-                <div className={classPosition}>Score: {this.props.score}</div>
+            <div className='leaderboard-item'>
+                <div className='leaderboard-user'>
+                    <div className='leaderboard-user-name'>{this.props.username}</div>
+                    <div className='leaderboard-user-avatar'    >
+                        <img 
+                            src={this.props.avatar} 
+                            alt={this.props.username} 
+                            width='70px'
+                            height='70px'
+                        />
+                    </div>
+                </div>
+                <div className='leaderboard-user-questions'>
+                    <div className='leaderboard-user-answered'>
+                        <div>
+                            Answered Questions
+                        </div>
+                        <div>   
+                            {this.props.answers}
+                        </div>
+                    </div>
+                    <div className='leaderboard-user-created'>
+                        <div>
+                            Created Questions
+                        </div>
+                        <div> {this.props.questions}</div>
+                    </div>
+                </div>
+                <div className={classPosition}>
+                    <div className='score-title'>
+                        Score
+                    </div>
+                    <div className='score-number'>
+                        {this.props.score}
+                    </div>
+                </div>
             </div>
         )
     }

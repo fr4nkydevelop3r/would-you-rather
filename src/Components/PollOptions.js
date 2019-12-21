@@ -57,7 +57,7 @@ class PollOptions extends React.Component {
                 </div>
                 <div className='poll'>
                     <h4 className='poll-title'>Would you rather</h4>
-                    <form onSubmit={(e) => { this.handleSubmitAnswer(e, poll, authedUser) }}>
+                    <form  className='poll-options-form' onSubmit={(e) => { this.handleSubmitAnswer(e, poll, authedUser) }}>
                         <div className='pollOptions'>
                             <div className='pollOption'>
                                 <input 
@@ -69,7 +69,7 @@ class PollOptions extends React.Component {
                                     onChange={this.handleOptionChange}
 
                                 />
-                                <label htmlFor="optionOne">{poll.optionOne.text}</label>
+                                <label className='option1' htmlFor="optionOne">{poll.optionOne.text}</label>
                             </div>
                             
                             <div className='pollOption'>
@@ -83,7 +83,7 @@ class PollOptions extends React.Component {
 
 
                                 />
-                                <label htmlFor="optionTwo">{poll.optionTwo.text}</label>
+                                <label className='option2' htmlFor="optionTwo">{poll.optionTwo.text}</label>
                             </div>
                         </div>
                         <div className='vote-poll'>

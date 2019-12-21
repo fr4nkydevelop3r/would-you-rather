@@ -3,6 +3,6 @@ import React from 'react';
 
 export default function NotFound(){
     return(
-        <div>=( Page not found</div>
+        <div className='not-found'> =( Page not found</div>
     )
 }

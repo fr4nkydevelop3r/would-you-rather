@@ -11,7 +11,7 @@ class PollItem extends React.Component {
         const {pollType,id, authedUser} = this.props;
        
         return (
-            <div>
+            <div className='poll-item'>
             { authedUser ?
                 pollType === 'answered' ? 
                 <PollResults /> :
