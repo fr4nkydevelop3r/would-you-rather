@@ -52,7 +52,6 @@ class PollResults extends React.Component {
             console.log(hasVotedOptionTwo);*/
         }
 
-        console.log(poll);
 
 
         return(
