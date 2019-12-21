@@ -14,10 +14,18 @@ class ResultItem extends React.Component {
 
         return (
             <div className={className}>
-                <h4>Would you rather?</h4>
-                <p>{this.props.text}</p>
-                <p>{this.props.votes} of {this.props.totalVotes}</p>
-                <CircularProgressbar value={this.props.percentage} text={`${this.props.percentage}%`} />;
+                <div className='poll-results'>
+                    <h4>Would you rather?</h4>
+                    <p>{this.props.text}</p>
+                    <p>{this.props.votes} of {this.props.totalVotes}</p>
+                </div>
+                <div className='progress-bar-container'>
+                    <CircularProgressbar 
+                        className='progress-bar' 
+                        value={this.props.percentage} 
+                        text={`${this.props.percentage}%`} 
+                    />
+                </div>
 
             </div>
         )

@@ -10,15 +10,7 @@ body{
     justify-content: space-around;
 }
 
-.optionVoted{
-    border: 2px solid green;
-    color: green;
-}
 
-.optionNotVoted{
-    border: none;
-    color: black;
-}
 
 .firstPlace{
     color:gold;
@@ -179,6 +171,13 @@ body{
      color: pink;
 }
 
+.loader-signin{
+
+    margin-top: 148px;
+    text-align: center; 
+
+}
+
 /*Home component styles*/
 
 .home-container{
@@ -199,7 +198,10 @@ body{
 }
 
 .show-questions-btn{
-    color:white
+    color:white;
+    background: none;
+    border: none;
+
 }
 
 .show-questions-btn:focus{
@@ -331,3 +333,96 @@ body{
     background: none;
 }
 
+/*Styles PollResult component*/
+
+.poll-result{
+    margin-top: 128px;
+}
+
+.asked-by{
+    color: #fff;
+    padding-left: 32px;
+}
+
+/*
+    Styles ResultItem 
+*/
+
+.progress-bar{
+    width: 100px !important; 
+}
+
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: pink !important;
+}
+
+.CircularProgressbar-text{
+    fill: #fff !important;
+}
+.optionVoted{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    border: 3px solid pink;  
+    padding: 16px;  
+}
+
+.optionNotVoted{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    padding: 16px;
+}
+
+/*CreatePoll styles*/
+
+.createPoll-container{
+    margin-top: 128px;
+}
+
+.create-poll{
+    text-align: center;
+}
+
+.create-poll-titlle{
+    color: #fff;
+}
+
+.input-container, .or-container{
+    padding: 8px;
+}
+
+.or-container{
+    color: #fff;
+}
+
+.create-btn-container{
+    padding: 16px;
+}
+
+.btn-create{
+    border:2px solid pink;
+    padding: 8px;
+    width: 100px;
+    background: none;
+    color: #fff;
+}
+
+.input-poll{
+    border: 2px solid pink;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.input-poll:focus{
+    outline: none;
+}

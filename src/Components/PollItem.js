@@ -9,9 +9,7 @@ class PollItem extends React.Component {
     render(){
 
         const {pollType,id, authedUser} = this.props;
-        console.log(authedUser);
-        console.log(id);
-        console.log(pollType);
+       
         return (
             <div>
             { authedUser ?

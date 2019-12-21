@@ -39,29 +39,31 @@ class CreatePoll extends React.Component {
 
 
         return(
-            <div>
+            <div className='createPoll-container'>
                 {authedUser ? 
-                <div>
-                                    <h3>Would your rather?</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text" name='option1' onChange={this.handleOnChange} value= {this.state.option1}/>
-                    </div>
-                    <div>
-                        <label>OR</label>
-                    </div>
-                    <div>
-                        <input type="tex2" name='option2' onChange={this.handleOnChange} value= {this.state.option2}/>
-                     </div>
-                     <div>
-                         <button>
-                             Create
-                         </button>
-                     </div>
+                <div className='create-poll'>
+                    <h3 className='create-poll-titlle'>Would your rather?</h3>
+                        <div>
+                            <form onSubmit={this.handleSubmit}>
+                                <div className='input-container'>
+                                    <input className='input-poll' type="text" name='option1' onChange={this.handleOnChange} value= {this.state.option1}/>
+                                </div>
+                                <div className='or-container'>
+                                    <label>or</label>
+                                </div>
+                                <div className='input-container'>
+                                    <input className='input-poll' type="tex2" name='option2' onChange={this.handleOnChange} value= {this.state.option2}/>
+                                </div>
+                                <div className='create-btn-container'>
+                                    <button className='btn-create'>
+                                        Create
+                                    </button>
+                                </div>
 
-                </form>
+                            </form>
+                        </div>
                 </div>
- : <SignIn />}
+                    : <SignIn />}
                 
             </div>
         )

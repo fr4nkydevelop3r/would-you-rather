@@ -33,7 +33,7 @@ class LeaderBoard extends React.Component {
         
 
         return(
-            <div>
+            <div className='leaderboard-container'>
 
             {
                 authedUser ? 

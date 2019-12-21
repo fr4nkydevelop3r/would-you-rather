@@ -60,8 +60,8 @@ class PollResults extends React.Component {
             <div>
 
             {poll ?
-                <div>
-                    <h4>Asked by {poll.author}</h4>
+                <div className='poll-result'>
+                    <h4 className='asked-by'>Asked by {poll.author}</h4>
                     <ResultItem 
                         text={textOptionOne}
                         totalVotes={totalVotes}
