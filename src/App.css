@@ -1,613 +1,624 @@
-body{
-    background: #373a47;
-    font-family: 'Tomorrow', sans-serif;
-    margin: 0;
+body {
+  background: #373a47;
+  font-family: "Tomorrow", sans-serif;
+  margin: 0;
 }
 
- 
-.pollContainer{
-    display: flex;
-    justify-content: space-around;
+/*Menu component styles */
+.menu-container {
+  display: none;
 }
-
-
-
-
 
 /*Nav Component Styles*/
 
-.nav-container{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }
 
-.welcome-user{
-    color: pink;
-    padding-top: 50px;
-    padding-left: 136px;
+.welcome-user {
+  color: pink;
+  padding-top: 50px;
 }
-
-
-
 
 /*Menu Compoent Styles*/
 
-.nav-container{
-    position: fixed;
-    top: 0;
-    background: #373a47;
-    z-index: 1000;
+.nav-container {
+  position: fixed;
+  top: 0;
+  background: #373a47;
+  z-index: 1000;
 }
 
-
 .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    right: 16px;    
-    top: 36px;
-    color: pink;
-  }
-  
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: pink;
-  }
-  
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: white;
-  }
-  
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-  
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background:pink;
-  }
-  
-  /*
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 16px;
+  top: 36px;
+  color: pink;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: pink;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: pink;
+}
+
+/*
   Sidebar wrapper styles
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
   */
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
-  
-  /* General sidebar styles */
-  .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-  
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-  
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-  }
-  
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
-  
-  /* Styling of overlay */
-   .bm-overlay {
-    background: none !important;
-  }
-
-   .menu-item{
-      color: pink;
-      text-decoration: none;
-      font-family: 'Tomorrow', sans-serif;
-      margin-top: 8px   ;
-    }
-
-    .menu-item:focus{
-        outline: none;
-    }
-
-
-  /*SignIn Component Styles*/
-
-  .signin-container{
-    color: #fff;
-    margin-top: 128px;
-    text-align: center
-  }
-
-  .welcome-message{
-      margin: 8px;
-  }
-
-  .select-users-container{
-      padding-top: 32px;
-      width: 200px;
-      margin: 0 auto;
-      color: #000
-  }
-
-  
-.signin-btn{
-    border: 2px solid pink;
-    margin-top: 24px;
-    padding: 8px 16px;
-    background: transparent;
-    color: #fff;
-    font-weight: 300;
-    font-size: 16px;
-    transition: all 0.2s;
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
 }
 
-.signin-btn:hover{
-    border: 2px solidwhite;
-    color: pink;
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
 }
 
-.text-warning{
-     margin-top: 8px;
-     color: pink;
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
 }
 
-.loader-signin{
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
 
-    margin-top: 148px;
-    text-align: center; 
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
 
+/* Styling of overlay */
+.bm-overlay {
+  background: none !important;
+}
+
+.menu-item {
+  color: pink;
+  text-decoration: none;
+  font-family: "Tomorrow", sans-serif;
+  margin-top: 8px;
+}
+
+.menu-item:focus {
+  outline: none;
+}
+
+/*SignIn Component Styles*/
+
+.signin-container {
+  color: #fff;
+  margin-top: 128px;
+  text-align: center;
+}
+
+.welcome-message {
+  margin: 8px;
+}
+
+.select-users-container {
+  padding-top: 32px;
+  width: 200px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.signin-btn {
+  border: 2px solid pink;
+  margin-top: 24px;
+  padding: 8px 16px;
+  background: transparent;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.signin-btn:hover {
+  border: 2px solidwhite;
+  color: pink;
+}
+
+.text-warning {
+  margin-top: 8px;
+  color: pink;
+}
+
+.loader-signin {
+  margin-top: 148px;
+  text-align: center;
 }
 
 /*Home component styles*/
 
-.home-container{
-    margin-top: 110px;
-    margin-bottom: 64px;
+.home-container {
+  margin-top: 110px;
+  margin-bottom: 64px;
 }
 
-.questions-btns{
-    display: flex;
-    justify-content: center;    
-    align-content: center;
-    padding: 8px;
+.questions-btns {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 8px;
 }
 
-.btn-question{
-    border:1px solid pink;
-    color: white;
+.btn-question {
+  border: 1px solid pink;
+  color: white;
 }
 
-.show-questions-btn{
-    color:white;
-    background: none;
-    border: none;
-
+.show-questions-btn {
+  color: white;
+  background: none;
+  border: none;
 }
 
-.show-questions-btn:focus{
-    outline: none;
+.show-questions-btn:focus {
+  outline: none;
 }
 
-.selected-category{
-    background: none;
-    border: none;
-    border-bottom: 2px solid pink;
+.selected-category {
+  background: none;
+  border: none;
+  border-bottom: 2px solid pink;
 }
 
 /*Questions list styles*/
 
-.questions-list-container{
-    margin-top: 32px;
+.questions-list-container {
+  margin-top: 32px;
 }
 
 /*Poll component styles*/
-.poll-container{
-    border-bottom:1px solid pink;
-    padding: 8px;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 16px;
-    padding-bottom: 16px;
+
+.pollContainer {
+  display: flex;
+  justify-content: space-around;
 }
 
-.author-poll{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;    
-    width: 50%;
+.poll-container {
+  border-bottom: 1px solid pink;
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+  padding-bottom: 16px;
 }
 
-.author-poll-name{
-    color: #fff;    
-    font-size: 14px;
+.author-poll {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
 }
 
-.poll{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.author-poll-name {
+  color: #fff;
+  font-size: 14px;
 }
 
-.poll-title{
-    color: #fff;
-    margin:0 0 8px 0;   
+.poll {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.poll-option{
-    color: pink;
-    text-align: center;
-    font-size: 14px;
-    
+.poll-title {
+  color: #fff;
+  margin: 0 0 8px 0;
 }
 
-.view-poll-btn{
-    padding: 8px;
-    background: none;
-    border: 2px solid pink;
-    color:pink;    
+.poll-option {
+  color: pink;
+  text-align: center;
+  font-size: 14px;
 }
 
+.view-poll-btn {
+  padding: 8px;
+  background: none;
+  border: 2px solid pink;
+  color: pink;
+}
 
 /*Styles footer*/
-.footer{
-    background: #373a47;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
+.footer {
+  background: #373a47;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
 }
 
-.made-by{
-    color: #fff;
+.made-by {
+  color: #fff;
 }
 
-.fr4nky{
-    color: pink;
-    text-decoration: none;
+.fr4nky {
+  color: pink;
+  text-decoration: none;
 }
 
-.loader{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+.loader {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.no-unanswered, .no-answered{
-    margin-top: 16px;
-    color: pink;
+.no-unanswered,
+.no-answered {
+  margin-top: 16px;
+  color: pink;
 }
 
 /*Poll Options styles*/
 
-.pollContainer{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 128px;
-    height: 150px; 
+.pollContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 128px;
+  height: 150px;
 }
 
-.poll-options-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.poll-options-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.option1, .option2{
-    padding-left: 8px;
+.option1,
+.option2 {
+  padding-left: 8px;
 }
 
-.pollOptions{
-    color: #fff;
-    font-size: 15px;
+.pollOptions {
+  color: #fff;
+  font-size: 15px;
 }
 
-.pollOption{
-        margin-bottom: 8px;
+.pollOption {
+  margin-bottom: 8px;
 }
 
-.vote-poll{
-    text-align: center;
-    margin-top: 16px;
+.vote-poll {
+  text-align: center;
+  margin-top: 16px;
 }
 
-.votePoll-btn{
-    padding: 8px;
-    border:2px solid pink;
-    color: #fff;
-    background: none;
+.votePoll-btn {
+  padding: 8px;
+  border: 2px solid pink;
+  color: #fff;
+  background: none;
 }
 
 /*Styles PollResult component*/
 
-.poll-result{
-    margin-top: 128px;
+.poll-result {
+  margin-top: 128px;
 }
 
-.asked-by{
-    color: #fff;
-    padding-left: 32px;
+.asked-by {
+  color: #fff;
+  padding-left: 32px;
 }
 
 /*
     Styles ResultItem 
 */
 
-.progress-bar{
-    width: 100px !important; 
+.progress-bar {
+  width: 100px !important;
 }
-
 
 .CircularProgressbar .CircularProgressbar-path {
-    stroke: pink !important;
+  stroke: pink !important;
 }
 
-.CircularProgressbar-text{
-    fill: #fff !important;
+.CircularProgressbar-text {
+  fill: #fff !important;
 }
-.optionVoted{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 32px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #fff;
-    border: 3px solid pink;  
-    padding: 16px;  
+.optionVoted {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  border: 3px solid pink;
+  padding: 16px;
 }
 
-.optionNotVoted{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 32px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #fff;
-    padding: 16px;
+.optionNotVoted {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  padding: 16px;
 }
 
 /*CreatePoll styles*/
 
-.createPoll-container{
-    margin-top: 128px;
+.createPoll-container {
+  margin-top: 128px;
 }
 
-.create-poll{
-    text-align: center;
+.create-poll {
+  text-align: center;
 }
 
-.create-poll-titlle{
-    color: #fff;
+.create-poll-titlle {
+  color: #fff;
 }
 
-.input-container, .or-container{
-    padding: 8px;
+.input-container,
+.or-container {
+  padding: 8px;
 }
 
-.or-container{
-    color: #fff;
+.or-container {
+  color: #fff;
 }
 
-.create-btn-container{
-    padding: 16px;
+.create-btn-container {
+  padding: 16px;
 }
 
-.btn-create{
-    border:2px solid pink;
-    padding: 8px;
-    width: 100px;
-    background: none;
-    color: #fff;
+.btn-create {
+  border: 2px solid pink;
+  padding: 8px;
+  width: 100px;
+  background: none;
+  color: #fff;
 }
 
-.input-poll{
-    border: 2px solid pink;
-    border-radius: 10px;
-    padding: 3px;
+.input-poll {
+  border: 2px solid pink;
+  border-radius: 10px;
+  padding: 3px;
 }
 
-.input-poll:focus{
-    outline: none;
+.input-poll:focus {
+  outline: none;
 }
 
-.validate-option1, .validate-option2{
-    color: pink;
+.validate-option1,
+.validate-option2 {
+  color: pink;
 }
 
 /*LeaderBoard styles component*/
 
-.leaderboard-container{
-    margin-top: 128px;
-    padding: 16px;      
+.leaderboard-container {
+  margin-top: 128px;
+  padding: 16px;
 }
 
-.leaderboard-item{
-    display: flex;
-    padding: 8px;
-    height: 130px;
+.leaderboard-item {
+  display: flex;
+  padding: 8px;
+  height: 130px;
 }
 
-.leaderboard-user-name{
-    color: #fff;
-    text-align: center;
+.leaderboard-user-name {
+  color: #fff;
+  text-align: center;
 }
 
-.leaderboard-user{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    justify-content: space-around;
-    width: 110px;
+.leaderboard-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+  width: 110px;
 }
 
-.leaderboard-user-questions{
-    padding: 8px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 14px;
+.leaderboard-user-questions {
+  padding: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
 }
 
-.leaderboard-user-answered, .leaderboard-user-created{
-    text-align: center;
+.leaderboard-user-answered,
+.leaderboard-user-created {
+  text-align: center;
 }
 
-.firstPlace, .secondPlace, .thirdPlace{
-    padding: 8px 8px 8px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;   
-    text-align: center;
-    color: pink;    
+.firstPlace,
+.secondPlace,
+.thirdPlace {
+  padding: 8px 8px 8px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  color: pink;
 }
 
-.firstPlace .score-number{
-    color:gold;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid gold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.firstPlace .score-number {
+  color: gold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid gold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.secondPlace .score-number{
-    color: silver;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid silver;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.secondPlace .score-number {
+  color: silver;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.thirdPlace .score-number{
-    color: brown;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    border: 1px solid brown;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.thirdPlace .score-number {
+  color: brown;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /*
 Styles Page not found
 */
 
-.not-found{
-    margin-top: 186px;
-    text-align: center;
-    color: pink;
+.not-found {
+  margin-top: 186px;
+  text-align: center;
+  color: pink;
 }
 
 @media only screen and (min-width: 768px) {
-
-    .welcome-user{
-        padding-left: 450px;
-    }
-
-    .show-questions-btn{
-        font-size: 14px;
-    }
-
-    .questions-list-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    
-    .poll-container{
-        width: 50%;
-        margin-bottom: 16px;
-    }
-
-    .poll-item{
-        display: flex;
-        justify-content: center;
-    }
-
-    .pollContainer{
-        width: 70%;
-    }
-
-    .leaderboard-container{
-        display: flex;  
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .leaderboard-item{
-        width: 500px;
-        justify-content: space-around;
-    }
-
-    .createPoll-container{
-        margin-top: 186px;
-    }
-
-    .votePoll-btn{
-        width: 70px;
-        font-size: 14px;
-    }
-
+  .show-questions-btn {
+    font-size: 14px;
   }
 
-  @media only screen and (min-width: 1200px) {
-
-    .welcome-user{
-        padding-left: 1100px;
-    }
-
-    .pollContainer{
-        width: 30%;
-        margin-top: 200px;
-    }
-
-    .asked-by{
-        text-align: center;
-    }
-
-    .poll-result-container{
-        width: 60%;
-    }
-
-    .result-item{
-        display: flex;  
-    }
-
-    .btn-create{
-        font-size: 14px;
-        width: 100px;
-    }
-
-    .btn-create:focus{
-        outline: none;
-    }
+  .questions-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+  .poll-container {
+    width: 50%;
+    margin-bottom: 16px;
+  }
+
+  .poll-item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pollContainer {
+    width: 70%;
+  }
+
+  .leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leaderboard-item {
+    width: 500px;
+    justify-content: space-around;
+  }
+
+  .createPoll-container {
+    margin-top: 186px;
+  }
+
+  .votePoll-btn {
+    width: 70px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .nav-container {
+    display: none;
+  }
+
+  .menu-container {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .hello-user {
+    color: pink;
+  }
+
+  .menu-link {
+    color: pink;
+    text-decoration: none;
+    font-family: "Tomorrow", sans-serif;
+    padding: 0 4px 0 4px;
+  }
+
+  .menu-link:focus {
+    outline: none;
+  }
+
+  .pollContainer {
+    width: 30%;
+    margin-top: 200px;
+  }
+
+  .asked-by {
+    text-align: center;
+  }
+
+  .poll-result-container {
+    width: 60%;
+  }
+
+  .result-item {
+    display: flex;
+  }
+
+  .btn-create {
+    font-size: 14px;
+    width: 100px;
+  }
+
+  .btn-create:focus {
+    outline: none;
+  }
+
+  .createPoll-container {
+    margin-top: 116px;
+  }
+}
