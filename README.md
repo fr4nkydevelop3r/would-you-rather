@@ -7,20 +7,20 @@ Create polls, answer polls, view statistics  and have fun.
 
 ### 1. Clone repository 
 
-git clone https://github.com/fr4nkydevelop3r/would-you-rather.git   
+`git clone https://github.com/fr4nkydevelop3r/would-you-rather.git`   
 
 
 ### 2. Change to the app directory
 
-cd would-you-rather
+`cd would-you-rather`
 
 ### In the project directory, you can run
 
-npm install
+`npm install`
 
 Install dependencies
 
-npm start
+`npm start`
 
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
