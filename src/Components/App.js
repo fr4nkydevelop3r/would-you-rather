@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/signin">
             <SigIn />
           </Route>
-          <Route exact path="/poll/:id">
+          <Route exact path="/questions/:id">
             <PollItem />
           </Route>
           <Route exact path="/add">

@@ -11,7 +11,7 @@ class PollOptions extends React.Component {
   handleSubmitAnswer = (e, poll, authedUser) => {
     e.preventDefault();
     this.props.handleSaveAnswer(authedUser, poll, this.state.selectedOption);
-    this.props.history.push(`/poll/${poll.id}`);
+    this.props.history.push(`/questions/${poll.id}`);
   };
 
   handleOptionChange = changeEvent => {

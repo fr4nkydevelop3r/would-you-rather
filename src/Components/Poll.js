@@ -6,7 +6,7 @@ import { withRouter, Link } from "react-router-dom";
 function Poll({ poll, user, history }) {
   const toPoll = (e, id) => {
     e.preventDefault();
-    history.push(`/poll/${id}`);
+    history.push(`/questions/${id}`);
   };
 
   return (
@@ -24,13 +24,13 @@ function Poll({ poll, user, history }) {
       <div className="poll">
         <h4 className="poll-title">Would you rather</h4>
         <p className="poll-option">...{poll.optionOne.text}</p>
-        <Link to={`/poll/${poll.id}`}>
+        <Link to={`/questions/${poll.id}`}>
           <button
             className="view-poll-btn"
             onClick={e => {
               toPoll(e, poll.id);
             }}
-            to={`/poll/${poll.id}`}
+            to={`/questions/${poll.id}`}
           >
             View poll
           </button>
