@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "chroma-js": "^2.1.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "gh-pages": "^2.2.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "lodash": "^4.17.15",
@@ -35,6 +36,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -46,6 +49,7 @@
       "pre-commit": "lint-staged"
     }
   },
+  "homepage": "https://fr4nkydevelop3r.github.io/would-you-rather",
   "browserslist": {
     "production": [
       ">0.2%",

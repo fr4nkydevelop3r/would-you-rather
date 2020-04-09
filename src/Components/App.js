@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import PollItem from "./PollItem";
 import CreatePoll from "./CreatePoll";
@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>{" "}
+          </Route>
           :
           <Route exact path="/signin">
             <SigIn />
