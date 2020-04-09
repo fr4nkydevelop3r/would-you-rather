@@ -2,6 +2,7 @@
   "name": "would-you-rather",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fr4nkydevelop3r.github.io/would-you-rather",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -49,7 +50,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "homepage": "https://fr4nkydevelop3r.github.io/would-you-rather",
   "browserslist": {
     "production": [
       ">0.2%",
