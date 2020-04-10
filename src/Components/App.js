@@ -16,9 +16,6 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/would-you-rather">
-            <Home />
-          </Route>
           :
           <Route exact path="/signin">
             <SigIn />
