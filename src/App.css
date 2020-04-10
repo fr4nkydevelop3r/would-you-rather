@@ -20,6 +20,7 @@ body {
 .welcome-user {
   color: pink;
   padding-top: 50px;
+  width: 200px;
 }
 
 /*Menu Compoent Styles*/
